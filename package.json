@@ -1,6 +1,6 @@
 {
   "name": "http-web",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "an web version of node's http using net-web",
   "main": "http-web.js",
   "scripts": {

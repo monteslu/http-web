@@ -19,7 +19,7 @@ function getHeaderText(content, resp) {
   return headerText;
 }
 
-export function createServer(cb) {
+function createServer(cb) {
   const server = net.createServer((socket) => {
     let fullData;
     let timerStarted = false;
@@ -43,6 +43,7 @@ export function createServer(cb) {
       const reqText = fullData.toString().split(r + r);
       const rawHeaders = reqText[0].split(r);
       const top = rawHeaders.shift();
+      const [method, path, httpVersion] = top;
       const headers = {};
       rawHeaders.forEach((rl) => {
         const [rn, rv] = rl.split(':');
@@ -51,6 +52,8 @@ export function createServer(cb) {
       const req = {
         headers,
         top,
+        path,
+        httpVersion,
       };
       const resp = {
         replyHeaders: {},
@@ -76,10 +79,10 @@ export function createServer(cb) {
 }
 
 // hacky I know, I'll get better at webpack or whatever, i promise
-const http = globalThis.nodeHttpWeb || {
+const webHttp = globalThis.nodeHttpWeb || {
   createServer,
   version: pack.version,
 };
-globalThis.nodeHttpWeb = http;
+globalThis.nodeHttpWeb = webHttp;
 
-module.exports = http;
+module.exports = webHttp;
