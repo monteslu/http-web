@@ -47,7 +47,7 @@ function createServer(cb) {
       const headers = {};
       rawHeaders.forEach((rl) => {
         const [rn, rv] = rl.split(':');
-        headers[rn] = rv;
+        headers[rn] = ('' + rv).trim();
       });
       const req = {
         headers,
