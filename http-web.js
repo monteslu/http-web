@@ -54,6 +54,7 @@ function createServer(cb) {
         top,
         path,
         httpVersion,
+        method,
       };
       const resp = {
         replyHeaders: {},
