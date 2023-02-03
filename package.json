@@ -1,0 +1,36 @@
+{
+  "name": "http-web",
+  "version": "0.1.0",
+  "description": "an web version of node's http using net-web",
+  "main": "http-web.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack && BUILD_MODE=production webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/monteslu/http-web.git"
+  },
+  "keywords": [
+    "http",
+    "net",
+    "node",
+    "hsync"
+  ],
+  "author": "Luis Montes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/monteslu/http-web/issues"
+  },
+  "homepage": "https://github.com/monteslu/http-web#readme",
+  "dependencies": {
+    "net-web": "^0.2.0"
+  },
+  "browser": {
+    "net": "web-net"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
