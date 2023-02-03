@@ -42,8 +42,8 @@ function createServer(cb) {
     function finishedHeadersReceive() {
       const reqText = fullData.toString().split(r + r);
       const rawHeaders = reqText[0].split(r);
-      const top = rawHeaders.shift(' ');
-      const [method, path, httpVersion] = top;
+      const top = rawHeaders.shift();
+      const [method, path, httpVersion] = top.split(' ');
       const headers = {};
       rawHeaders.forEach((rl) => {
         const [rn, rv] = rl.split(':');
