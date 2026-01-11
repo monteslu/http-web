@@ -1,6 +1,6 @@
 {
   "name": "http-web",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Browser-compatible HTTP server built on net-web",
   "main": "http-web.js",
   "scripts": {
