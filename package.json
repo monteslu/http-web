@@ -1,10 +1,12 @@
 {
   "name": "http-web",
-  "version": "0.4.2",
-  "description": "an web version of node's http using net-web",
+  "version": "0.5.0",
+  "description": "Browser-compatible HTTP server built on net-web",
   "main": "http-web.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha",
+    "lint": "eslint http-web.js test/",
+    "lint:fix": "eslint http-web.js test/ --fix",
     "build": "webpack && BUILD_MODE=production webpack"
   },
   "repository": {
@@ -30,6 +32,10 @@
     "net": "web-net"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^8.57.0",
+    "globals": "^17.0.0",
+    "mocha": "^10.4.0",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.1"
   }
